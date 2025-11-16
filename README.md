@@ -2,7 +2,7 @@
 
 A companion repo for practical migration resources and templates that help you evolve an MCP server into lighter, more portable forms (CLI, file‑system scripts, and Claude skills) without replacing your existing MCP setup.
 
-This work builds on and complements the beyond-mcp examples by IndyDevDan.
+This work builds on and complements the beyond-mcp examples by IndyDevDan which can be found at https://github.com/disler/beyond-mcp
 
 ## Pick your path
 
