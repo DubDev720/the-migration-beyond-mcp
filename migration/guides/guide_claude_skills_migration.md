@@ -1,5 +1,5 @@
 # MCP → Claude Skills Migration Guide (Authoritative, Standalone)
-Note: For a comprehensive test plan, see migration_guide/test_validation_plan.md
+Note: For a comprehensive test plan, see tests/test_validation_plan.md
 
 Purpose
 - Provide a clean, precise process for migrating an MCP server to Claude Skills.

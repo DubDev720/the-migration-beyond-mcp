@@ -1,0 +1,19 @@
+{
+  "name": "the-migration-beyond-mcp",
+  "description": "Extension and quickstart toolkit for implementing and migrating to the Beyond-MCP pattern, including agent templates, scripts, and examples.",
+  "role": "beyond-mcp-extension",
+  "entrypoints": {
+    "agentsDir": ".agent/agents",
+    "commandsDir": ".agent/commands"
+  },
+  "relatedProjects": [
+    "../beyond-mcp"
+  ],
+  "tags": [
+    "beyond-mcp",
+    "migration",
+    "quickstart",
+    "agents",
+    "commands"
+  ]
+}

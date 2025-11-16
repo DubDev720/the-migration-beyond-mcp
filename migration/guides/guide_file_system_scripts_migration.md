@@ -1,5 +1,5 @@
 # MCP → File‑System Scripts Migration Guide (Authoritative, Standalone)
-Note: For a comprehensive test plan, see migration_guide/test_validation_plan.md
+Note: For a comprehensive test plan, see tests/test_validation_plan.md
 
 Purpose
 - Provide a precise, end‑to‑end process for migrating an MCP server to a suite of self‑contained, one‑file scripts.

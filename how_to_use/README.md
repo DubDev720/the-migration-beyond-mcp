@@ -7,7 +7,7 @@ This repository helps you evolve an MCP server into lighter, more portable forma
 
 It’s designed for humans (you and your team), not for agents. You’ll find practical guides, templates, and generators to help you plan, implement, validate, and operate these capabilities confidently.
 
-Note: The legacy `refactor/` folder is being phased out. Everything you need is covered by the current structure described below.
+Note: Earlier iterations of this repo referenced a legacy `refactor/` folder. The current structure no longer uses it; treat any similar folders in your own projects as deprecated in favor of the patterns described below.
 
 --------------------------------------------------------------------------------
 
@@ -26,11 +26,20 @@ Note: The legacy `refactor/` folder is being phased out. Everything you need is 
       - `cli_subcommand_skeleton.py` — Copy/paste skeleton for a CLI subcommand
       - `script_skeleton.py` — Copy/paste skeleton for a self‑contained script
     - `template_per_tool_mapping.md` — Fill‑in template to keep per‑tool parity across formats
+    - `template.agent/` — Agent and command templates (e.g., docs scraper and load‑docs command)
+    - `template_ai_docs/` — Template README for an `ai_docs/` folder in your project
+    - `template_file_system_scripts/` — Example file‑system scripts and README patterns
 - `scripts/`
   - `generate_cli_script.py` — Generator that emits real code files from arguments (CLI and/or script)
   - `scripts_index.py` — Utility to index a scripts folder for quick review and progressive disclosure
 - `tests/`
   - `test_validation_plan.md` — Comprehensive, end‑to‑end validation plan (parity, error handling, pagination, CI)
+- `.agent/`
+  - `agents/` — Example local agents (e.g., `docs-scraper`) used for documentation workflows
+  - `commands/` — Example commands (e.g., `load_ai_docs`, `prime`) that demonstrate how to orchestrate agents and scripts
+  - `settings.json` — Declares this repo as a Beyond‑MCP extension/quickstart and points to local agents/commands
+
+Example paths shown elsewhere in this guide (such as `apps/2_cli/`, `.golden/`, `.cache/`, `.claude/`) are illustrative for your own projects and are not required to exist in this repository.
 
 --------------------------------------------------------------------------------
 
@@ -241,9 +250,18 @@ Keep these files version‑controlled and visible for ops/security review.
   - `migration/templates/template_per_tool_mapping.md`
   - `migration/templates/file_skeletons/cli_subcommand_skeleton.py`
   - `migration/templates/file_skeletons/script_skeleton.py`
+  - `migration/templates/template.agent/` (agent and command templates)
+  - `migration/templates/template_ai_docs/` (ai_docs README template)
+  - `migration/templates/template_file_system_scripts/` (example scripts and patterns)
 - Generator:
   - `scripts/generate_cli_script.py`
 - Validation plan:
   - `tests/test_validation_plan.md`
 
-If you want me to tailor this guide for your specific project layout (e.g., actual CLI code locations, your script folders, or your team’s policy files), say the word and I’ll help you wire it up precisely.
+## Conventions used by .agent files
+
+- `allowed-tools` entries like `Bash(ls*)` indicate constrained shell access (for example, only safe `ls`‑style listings), not arbitrary shell execution.
+- Agent names are referenced in prompts with `@<agent-name>` (for example, `@docs-scraper` corresponds to `.agent/agents/docs-scraper.md`).
+- The concrete `.agent/commands/load_ai_docs.md` command is a simplified specialization of `migration/templates/template.agent/template_commands/template_load_ai_docs.md`, assuming an `ai_docs/` folder in your project rather than this template repo.
+
+To apply these patterns in your own project, adapt the example paths (CLI, scripts, skills, `.agent/`, and `ai_docs/`) to your existing layout and keep a per‑tool mapping and validation plan close to your code.

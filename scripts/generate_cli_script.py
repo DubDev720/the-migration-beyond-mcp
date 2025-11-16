@@ -21,7 +21,8 @@ It can also optionally emit:
 - A GENERATOR_USAGE.md snippet describing how to use this generator
 
 Usage:
-  python generate_cli_script.py <name> \
+  # From the repository root
+  python scripts/generate_cli_script.py <name> \
       --target both \
       --binary mycli \
       --endpoint /v1/example \
@@ -31,7 +32,7 @@ Usage:
       --out-cli ./apps/2_cli/my_command.py \
       --out-script ./apps/3_file_system_scripts/scripts/my_command.py \
       --emit-test-plan ./tests/test_validation_plan.md \
-      --emit-doc-snippets ./migration_guide/GENERATOR_USAGE.md \
+      --emit-doc-snippets ./migration/GENERATOR_USAGE.md \
       --force
 
 Notes:
@@ -40,6 +41,7 @@ Notes:
   - Supported types: str, int, float, bool
   - Example: --param limit:int:10 --param query:str
 - The generated files require `click` and `httpx` for runtime.
+- Adjust `--out-cli`, `--out-script`, and doc/output paths to match your project's layout; the examples above are illustrative.
 
 This tool writes files relative to the current working directory unless you pass absolute paths.
 """
@@ -757,7 +759,8 @@ def generate_generator_usage_content() -> str:
 
     Basic Usage
     ```bash
-    python migration_guide/templates/generate_cli_script.py <name> \\
+    # From the repository root
+    python scripts/generate_cli_script.py <name> \\
       --target both \\
       --binary yourcmd \\
       --endpoint /v1/example \\
@@ -766,7 +769,7 @@ def generate_generator_usage_content() -> str:
       --param query:str \\
       --out-cli ./apps/2_cli/<name>.py \\
       --out-script ./apps/3_file_system_scripts/scripts/<name>.py \\
-      --emit-test-plan ./migration_guide/test_validation_plan.md \
+      --emit-test-plan ./tests/test_validation_plan.md
     ```
 
     Param Spec
@@ -782,6 +785,7 @@ def generate_generator_usage_content() -> str:
     - Keep parameter names and defaults consistent with MCP and Skills.
     - Prefer clean JSON outputs and minimal stdout noise for automation.
     - For Skills, default to --json and add clear “When to use” bullets.
+    - Adjust output paths (CLI, scripts, tests, docs) to align with your own project structure; the examples above mirror this template repo.
     """)
 
 

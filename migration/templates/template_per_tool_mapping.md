@@ -9,7 +9,7 @@ Attribution: The patterns used here build upon the excellent examples in the bey
 
 ## How to use this template
 
-1) Copy the “Template” section below into a new file for your tool (for example: migration_guide/tool_mappings/<tool_name>.md).
+1) Copy the “Template” section below into a new file for your tool (for example: migration/tool_mappings/<tool_name>.md).
 2) Fill in each field precisely. Keep semantics identical across MCP, CLI, scripts, and skills.
 3) Validate by running golden outputs across surfaces and updating this sheet when behavior changes.
 4) Keep this sheet close to code changes. It becomes your source of truth for parity.

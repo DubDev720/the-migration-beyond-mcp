@@ -147,7 +147,7 @@ Parity with MCP
 - Execute the original MCP tool (if still present); compare outputs.
 - Ensure structural equivalence and key field parity. Minor formatting differences (ordering, whitespace) are OK for human mode; not OK for JSON fields.
 
-Golden tests (recommended; see migration_guide/test_validation_plan.md)
+Golden tests (recommended; see tests/test_validation_plan.md)
 - Save known `--json` outputs for representative calls as goldens.
 - Diff them in CI to catch regressions.
 - For volatile endpoints, either mock or validate shapes/keys instead of full equality.
